@@ -23,6 +23,7 @@ public with sharing class HandlerUpdateAccountCA {
     }
 
     public static void NetAmount(List<Order> order){
+        //calcul du net amount pour toute la liste importé avec data loader
         for (Order od : order){
             od.NetAmount__c = od.TotalAmount - od.ShipmentCost__c;
 
