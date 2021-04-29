@@ -7,12 +7,8 @@ public with sharing class AccountProcessorB implements Database.Batchable<sObjec
     }
     public void execute(Database.BatchableContext bc, List<Account> accountsWithOrders){
         // process each batch of records
-       List<Account> accs = new List <Account> ();
-        for (Account acc : accountsWithOrders) {
-            acc.='';
-            
-            }
-        Update Accounts;
+       
+        HandlerUpdateAccountCA.UpdateAccHandler(orders);
         }
         
     public void finish(Database.BatchableContext bc){

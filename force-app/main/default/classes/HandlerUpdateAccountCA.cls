@@ -21,4 +21,11 @@ public with sharing class HandlerUpdateAccountCA {
     }
     update accountToUpdate; 
     }
+
+    public static void NetAmount(List<Order> order){
+        for (Order od : order){
+            od.NetAmount__c = od.TotalAmount - od.ShipmentCost__c;
+
+        }
+    }
 }

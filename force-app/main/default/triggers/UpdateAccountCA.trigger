@@ -6,7 +6,7 @@ trigger UpdateAccountCA on Order (after update , before update) {
     
 
     if (Trigger.isBefore) {
-        Order newOrder= trigger.new[0];
-	newOrder.NetAmount__c = newOrder.TotalAmount - newOrder.ShipmentCost__c;
+        HandlerUpdateAccountCA.NetAmount(trigger.new);
+	
     }
 }
