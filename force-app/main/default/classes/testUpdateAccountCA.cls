@@ -42,5 +42,19 @@ private class testUpdateAccountCA {
 
         System.assertEquals(acc2.Chiffre_d_affaire__c, ca);
     }
+    @isTest static void TestNetAmount(){
+        Order order = [SELECT Id, ShipmentCost__c, TotalAmount ,NetAmount__c FROM Order];
+
+        order.shipmentCost__c = 10;
+        decimal od = order.TotalAmount- order.shipmentCost__c;
+
+        Test.startTest();
+        update(order);
+        Test.stopTest();
+
+       Order od2 = [SELECT NetAmount__c FROM Order ];
+        System.assertEquals(od2.NetAmount__c , od);
+
+    }
 
 }
