@@ -50,4 +50,12 @@ public with sharing class TestAccountProcessorBatch {
         Test.stopTest();
 
     }
+    @isTest public static void TestMyTeamOrdersController(){
+        MyTeamOrdersController controller = new MyTeamOrdersController();
+
+        Test.startTest();
+        decimal ordersSum = controller.SumOders;
+        Test.stopTest();
+        System.assertEquals(10*10*150, ordersSum);
+    }
 }

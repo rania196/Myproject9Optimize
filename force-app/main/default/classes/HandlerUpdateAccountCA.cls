@@ -5,9 +5,7 @@ public with sharing class HandlerUpdateAccountCA {
     for(integer i=0; i< orders.size(); i++){
       //  Order newOrder= trigger.new[i];
        setAccountIds.add(orders[i].AccountId);
-        //Account acc = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:newOrder.AccountId ];
-        //acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + newOrder.TotalAmount;
-        //update acc;
+       
     }
     List<Account> v1 = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id IN :setAccountIds];
     List<Account> accs= v1; 

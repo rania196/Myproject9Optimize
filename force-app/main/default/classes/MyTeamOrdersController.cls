@@ -5,6 +5,6 @@ public without sharing class MyTeamOrdersController {
 			return (decimal)groupedResults.get('total');
 
         }
-        private set;
+         set;
     }
 }
